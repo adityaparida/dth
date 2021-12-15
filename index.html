@@ -1,0 +1,119 @@
+	<!DOCTYPE html>
+	<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>DTH Number Validator</title>
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+	</head>
+	<body>
+		<div class="container-fluid mt-5">
+			<form>
+				<div class="row g-3 align-items-center">
+					<select class="form-select col-auto" id="onSelect" onchange="area()">
+						<option value="01">Angul</option>
+						<option value="02">Balangir</option>
+						<option value="03">Balasore</option>
+						<option value="04">Bargarh</option>
+						<option value="05">Bhadrak</option>
+						<option value="06">Boudh</option>
+						<option value="07">Cuttack</option>
+						<option value="08">Deogarh</option>
+						<option value="09">Dhenkanal</option>
+						<option value="10">Gajapati</option>
+						<option value="11">Ganjam</option>
+						<option value="12">Jagatsinghapur</option>
+						<option value="13">Jajpur</option>
+						<option value="14">Jharsuguda</option>
+						<option value="15">Kalahandi</option>
+						<option value="16">Kandhamal</option>
+						<option value="17">Kendrapara</option>
+						<option value="18">Kendujhar</option>
+						<option value="19">Khordha</option>
+						<option value="20">Koraput</option>
+						<option value="21">Malkangiri</option>
+						<option value="22">Mayurbhanj</option>
+						<option value="23">Nabarangpur</option>
+						<option value="24">Nayagarh</option>
+						<option value="25">Nuapada</option>
+						<option value="26">Puri</option>
+						<option value="27">Rayagada</option>
+						<option value="28">Sambalpur</option>
+						<option value="29">Sonepur</option>
+						<option value="30">Sundargarh</option>
+					</select>
+					<select class="form-select col-auto" id="selectArea" onchange="selectArea()">
+						<option value="201">Chandrasekharpur</option>
+						<option value="202">Khandagiri</option>
+						<option value="203">Patrapada</option>
+						<option value="204">Acharya Vihar</option>
+						<option value="205">Jaydev Vihar</option>
+						<option value="206">Laxmi Sagar</option>
+						<option value="207">Niladri Vihar</option>
+						<option value="208">Sailashri Vihar</option>
+						<option value="209">Kailash Vihar</option>
+						<option value="210">Lingaraj Nagar</option>
+						<option value="211">Sikharchandi</option>
+						<option value="212">Patia</option>
+					</select>
+					<select class="form-select col-auto" id="selectLocal" onchange="selectLocal()">
+						<option value="410">Acharya Vihar</option>
+						<option value="420">Gandamunda</option>
+						<option value="430">Hajuri Nagar</option>
+						<option value="440">Uttara</option>
+						<option value="450">Baramunda</option>
+						<option value="460">Vani Vihar</option>
+						<option value="470">Rasulgarh</option>
+						<option value="480">Chakeisiani</option>
+						<option value="490">Kalinga Nagar</option>
+						<option value="510">Bhoi Nagar</option>
+					</select>
+					<div class="col-auto">
+						<input type="text" id="fbox" class="form-control">
+					</div>
+					<div class="col-auto">
+						<input type="text" id="sbox" class="form-control">
+					</div>
+					<div class="col-auto">
+						<input type="text" id="tbox" class="form-control">
+					</div>
+					<div class="col-auto">
+						<input type="text" id="fobox" class="form-control">
+					</div>
+					<div class="col-auto">
+						<button class="btn btn-info text-white" type="submit" onclick="validate()">Validate</button>
+					</div>
+				</div>
+			</form>
+			<span id="result"></span>
+		</div>
+		<script>
+			function area() {
+				var a = document.getElementById("onSelect").value;
+				
+				document.getElementById("fbox").innerHTML = a;	
+			}
+
+			function selectArea() {
+				var b = document.getElementById("selectArea").value;
+				
+				document.getElementById("sbox").innerHTML = b;
+			}
+
+			function selectLocal() {
+				var c = document.getElementById("selectLocal").value;
+				
+				document.getElementById("tbox").innerHTML = c;
+			}
+
+			function validate() {
+				var x = a + b + c + document.getElementById("fobox").value;
+				document.getElementById("result").innerHTML = "Your DTH UID is: " x;
+			}
+			
+		</script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
+	</body>
+	</html>
